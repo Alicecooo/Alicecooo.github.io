@@ -1,0 +1,688 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Spring | Thwords twbeats</title><meta name="keywords" content="JAVA"><meta name="author" content="织"><meta name="copyright" content="织"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Spring"><meta name="application-name" content="Spring"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Spring"><meta property="og:url" content="https://alicecooo.github.io/2025/03/17/Spring/index.html"><meta property="og:site_name" content="Thwords twbeats"><meta property="og:description" content="IOC Xml 配置 Bean 结构   xml配置方式.png  配置样例 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455&amp;amp;l"><meta property="og:locale" content="zh"><meta property="og:image" content="https://pic1.imgdb.cn/item/67d94ddb88c538a9b5c03fc3.jpg"><meta property="article:author" content="织"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://pic1.imgdb.cn/item/67d94ddb88c538a9b5c03fc3.jpg"><meta name="description" content="IOC Xml 配置 Bean 结构   xml配置方式.png  配置样例 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455&amp;amp;l"><link rel="shortcut icon" href="https://pic1.imgdb.cn/item/67d94fb988c538a9b5c03ffb.png"><link rel="canonical" href="https://alicecooo.github.io/2025/03/17/Spring/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Thwords twbeats',
+  title: 'Spring',
+  postAI: '',
+  pageFillDescription: 'IOC, Xml 配置 Bean, 结构, 配置样例, 配置解析, Bean 的 get 方法, Spring 配置非自定义的 Bean, Bean 的实例化基本流程, Bean 工厂的后处理器, 流程, 代码, 自定义注解, 元注解, 流程, 代码, Bean 后置处理器, 流程, 代码, 扩展, Bean 的生命周期, 完整生命周期, 初始化阶段, 属性填充, 循环依赖, 三级缓存, 实例流程, Aware, 概述, 解释, 注解配置, 基本配置, 基本配置代码, 基本注解衍生注解, 依赖注入注解, 非自定义 bean 注解, Bean 配置类, 其他配置类, Xml 与注解方式, AOP, AOP 概念, Xml 配置 AOP, 流程, 代码, 配置解析, AOP 两种代理模式, 注解配置 AOP, 流程, 解析配置结构配置方式配置样例注入数据结构其余类似静态工厂方法实例工厂方法延迟调用配置解析关键字为对象为别名可有多个其他对象对象只有一个储存在缓存中仅在每个容器中有效不全局有效每次请求该时返回一个的新实例延迟加载容器创建时不会立即创建示例等待用时再创建并加载到单例池中与指定初始化方法与销毁方法构造参数参数名称参数值引用注入另一个对象自动装配方法依据类型但不能多个相同类型自动装配方法依据名称属性区分开发环境区分不同的模块化引入其他模块的配置文件取别名继承有配置的属性在子中必须也要存在并且可以进行注入否则会出现错误当然如果子类中某些属性比较特殊也可以在继承的基础上单独配置如果我们只是希望某一个仅作为一个配置模版供其他继承使用那么我们可以将其配置为这样容器就不会创建这个的对象了的注入方式的方法的构造方法接口只包括方法凡是继承该接口的类在初始化的时候都会执行该方法初始化的时候如果该实现了接口并且同时在配置文件中指定了系统则是先调用方法然后再调用中指定的方法静态工厂方法与实例工厂方法静态工厂方法不需要先定义的方法需要强制转换配置非自定义的配置非自定义的的实例化基本流程实例化基本流程实例化基本流程工厂的后处理器流程的后处理器代码上的实现过程此时未使用接口实现将的属性改为测试在所有加载完成后但在实例化之前修改的属性值属性在中被修改为继承自上面的说明对提供的方法进行了增强扩展一句话总结其功能作用就是注册的就是实现来完成配置类及其相关注解解析得到注册到上下文中的使用注入上述实现需要配置文件自定义注解元注解元注解的作用就是负责注解其他注解描述注解的使用范围应用于类接口包括注解类型枚举应用于属性包括枚举中的常量应用于方法应用于方法的形参应用于构造函数应用于局部变量应用于注解类型应用于包表明该注解的生命周期编译时被丢弃不包含在类文件中加载时被丢弃包含在类文件中默认值由加载包含在类文件中在运行时可以被获取到是一个标记注解阐述了某个被标注的类型是被继承的如果一个使用了修饰的类型被用于一个则这个将被用于该的子类表明该注解标记的元素可以被或类似的工具文档化流程自定义注解代码注解的作用类似代替原有的通过扫描工具扫描指定包以及子包下的所有类收集使用注解的类中配置让他生效后置处理器流程被实例化后到最终缓存到名为单例池之前中间会经过的初始化过程例如属性的填充初始方法的执行等就是这一阶段的对外扩展点我们称之为后置处理器跟上面的工厂后处理器相似它也是一个接口实现了该接口并被容器管理的会在流程节点上被自动调用代码中配置不使用注解的流程的执行了的执行了实例化构造方法执行了该注解表示实例化之后执行该初始化方法执行初始化方法了需要配置文件结果如下实例化构造方法执行了的执行了执行初始化方法了的执行了说明方法的执行时间点和顺序是在实例化之后对的初始化方法前后进行回调扩展的这时候你可能会想如果要对的实例化前后进行扩展怎么办肯定也想到这一点提供了继承自的扩展类后置处理器扩展该接口继承了接口接口只在的初始化阶段进行扩展接口在此基础上增加了个方法把可扩展的范围增加了实例化阶段和属性注入阶段该类主要的扩展点有以下个方法主要在生命周期的两大阶段实例化阶段和初始化阶段实例化之前相当于这个之前实例化之后相当于这个之后已经实例化完成在属性注入时阶段触发等注解原理基于此方法实现初始化之前相当于把注入上下文之前初始化之后相当于把注入上下文之后该扩展接口集成自上面有个触发点方法该触发点发生在之前这个方法用于预测的类型返回第一个预测成功的类型如果不能预测返回当你调用时当通过的名字无法得到类型信息时就调用该回调方法来决定类型信息不太常用该触发点发生在之后用于确定该的构造函数之用返回的是该的所有构造函数列表用户可以扩展这个点来自定义选择相应的构造器来实例化这个该触发点发生在之后当有循环依赖的场景当实例化好之后为了防止有循环依赖会提前暴露回调方法用于实例化的后置处理这个方法就是在提前暴露的回调方法中触发的生命周期完整生命周期的生命周期的生命周期初始化阶段的生命周期初始化阶段属性填充生命周期属性填充循环依赖三级缓存生命周期三级缓存实例流程生命周期三级缓存实例概述的生命周期接口解释接口是一个具有标识作用的超级接口指示是具有被容器通知的能力通知的方式是采用回调的方式接口是一个空接口具体的实现由各个子接口决定且该接口通常只包含一个单个参数并且返回值为的方法可以理解就是方法该方法的命名方式为去掉接口名中的后缀即接口则方法定义为例如注意仅实现接口不会提供任何默认功能需要明确的指定实现哪个子接口通俗的来说翻译过来的意思是有感知的察觉的如果类上实现了该接口表明对什么有感知比如表示知道了自己的接口应用场景及实现原理可以看看注解配置基本配置注解基本配置基本配置代码使用注解时文件中还必须有配置让扫描注解来获得对象基本注解衍生注解基本注解衍生注解依赖注入注解依赖注入注解依据类型进行注入如果同一类型的有多个会根据名字二次匹配非自定义注解非自定义注解配置配置类导入外部配置类其他配置类切换环境标注的优先级会更高在通过类型获取或者通过根据类型进行注入时优先级会更高与注解方式与注解概念概念概念解释配置流程导入相关坐标准备目标类增强类并配置给管理配置切点表达式哪些方法被增强配置织入切点被哪些通知方法增强是前置增强还是后置增强五类通知参数传递代码配置命名空间测试测试之后相当配置解析配置解析切点表达式例子配置解析两种代理模式目标类有接口是基于接口类生成实现类的代理对象有接口默认实现目标类无接口且不能用修饰是基于被代理对象动态生成子对象为代理对象无接口默认实现但可强行使用注解配置流程注解配置解析注解开发解析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-18 20:59:37',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://www.helloimg.com/i/2024/12/30/67720a603e17e.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Thwords twbeats</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/CS/" style="font-size: 1.05rem;">CS<sup>6</sup></a><a href="/tags/JAVA/" style="font-size: 1.05rem;">JAVA<sup>1</sup></a><a href="/tags/Summary/" style="font-size: 1.05rem;">Summary<sup>1</sup></a><a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 1.05rem;">后端<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">March 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">February 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/JAVA/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>JAVA</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Spring</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-03-17T15:34:25.000Z" title="发表于 2025-03-17 23:34:25">2025-03-17</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-03-18T12:59:37.709Z" title="更新于 2025-03-18 20:59:37">2025-03-18</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://alicecooo.github.io/2025/03/17/Spring/"><header><a href="/tags/JAVA/" tabindex="-1" itemprop="url">JAVA</a><h1 id="CrawlerTitle" itemprop="name headline">Spring</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">织</span><time itemprop="dateCreated datePublished" datetime="2025-03-17T15:34:25.000Z" title="发表于 2025-03-17 23:34:25">2025-03-17</time><time itemprop="dateCreated datePublished" datetime="2025-03-18T12:59:37.709Z" title="更新于 2025-03-18 20:59:37">2025-03-18</time></header><h1 id="ioc">IOC</h1>
+<h2 id="xml-配置-bean">Xml 配置 Bean</h2>
+<h3 id="结构">结构</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501c88c538a9b5c04026.png"
+alt="xml配置方式.png" />
+<figcaption aria-hidden="true">xml配置方式.png</figcaption>
+</figure>
+<h3 id="配置样例">配置样例</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="type">bean</span> <span class="variable">id</span> <span class="operator">=</span> <span class="string">&quot;UserDao&quot;</span> </span><br><span class="line">name =<span class="string">&quot;aaa,bbb&quot;</span></span><br><span class="line">class = <span class="string">&quot;com.test.dao.impl.UserDaoImpl&quot;</span> </span><br><span class="line">scope=<span class="string">&quot;singleton&quot;</span> </span><br><span class="line">lazy-init=<span class="string">&quot;true&quot;</span></span><br><span class="line">init-method = <span class="string">&quot;init&quot;</span></span><br><span class="line">destroy-method = <span class="string">&quot;destroy&quot;</span></span><br><span class="line">autowire = <span class="string">&quot;byType&quot;</span> or <span class="string">&quot;byName&quot;</span>/&gt; </span><br><span class="line"></span><br><span class="line">&lt;constructor-arg  name=<span class="string">&quot;age&quot;</span> value=<span class="string">&quot;18&quot;</span>&gt; &lt;/constructor-arg&gt;</span><br><span class="line">&lt;<span class="type">property</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;userDao&quot;</span> ref = <span class="string">&quot;userDao&quot;</span>&gt; &lt;/property&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//注入数据结构，其余类似</span></span><br><span class="line">&lt;<span class="type">property</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;stringList&quot;</span>&gt;</span><br><span class="line">	&lt;list&gt; &lt;value&gt; aaa &lt;/value&gt; &lt;/list&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态工厂方法</span></span><br><span class="line">&lt;<span class="type">bean</span> <span class="variable">id</span> <span class="operator">=</span> <span class="string">&quot;UserDao1&quot;</span> </span><br><span class="line">class = <span class="string">&quot;com.test.factory.MyBeanFactory1&quot;</span></span><br><span class="line">factory-method = <span class="string">&quot;UserDao&quot;</span>&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例工厂方法</span></span><br><span class="line">&lt;<span class="type">bean</span> <span class="variable">id</span> <span class="operator">=</span><span class="string">&quot;MybeanFactory2&quot;</span> </span><br><span class="line">class = <span class="string">&quot;com.test.factory.MyBeanFactory2&quot;</span></span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="type">bean</span> <span class="variable">id</span> <span class="operator">=</span> <span class="string">&quot;UserDao2&quot;</span> </span><br><span class="line">factory-bean = <span class="string">&quot;MybeanFactory2&quot;</span>&gt;</span><br><span class="line">factory-method = <span class="string">&quot;UserDao&quot;</span>&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Factorybeany延迟调用</span></span><br><span class="line">&lt;<span class="type">bean</span> <span class="variable">id</span> <span class="operator">=</span><span class="string">&quot;MybeanFactory3&quot;</span> </span><br><span class="line">class = <span class="string">&quot;com.test.factory.MyBeanFactory2&quot;</span></span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MybeanFactory3</span> <span class="keyword">implements</span> <span class="title class_">FactoryBean</span>&lt;UserDao&gt;&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="keyword">public</span> UserDao <span class="title function_">getObject</span><span class="params">()</span> <span class="keyword">throws</span> Expection&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">UserDaoImpl</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="keyword">public</span> class&lt;?&gt; getObejectType()&#123;</span><br><span class="line">		<span class="keyword">return</span> UserDao.class;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="配置解析">配置解析</h3>
+<ul>
+<li>关键字
+<ul>
+<li>Id 为 bean 对象 name，name 为别名，可有多个</li>
+<li>Ref 其他bean 对象</li>
+<li>Singleton ，Bean 对象只有一个储存在缓存中，仅在每个
+Spring容器中有效，不全局有效</li>
+<li>Prototype，每次请求该 Bean 时返回一个 Bean 的新实例</li>
+<li>Lazy-init，延迟加载，Spring 容器创建时不会立即创建 bean
+示例，等待用时再创建并加载到单例池中</li>
+<li>Init-method 与 Destroy-method，指定初始化方法与销毁方法</li>
+<li>Constructor-arg 构造参数, name 参数名称，value 参数值 ref
+引用注入另一个 bean 对象</li>
+<li>ByType (自动装配 set 方法，依据类型，但不能多个相同 bean 类型) or
+byName (自动装配 set 方法，依据名称)</li>
+<li>Profiles 属性区分开发环境，区分不同的 beans</li>
+<li>Import 模块化，引入其他模块的配置 xml 文件</li>
+<li>Alias 取别名</li>
+<li>Parent
+继承有配置的属性，在子Bean中必须也要存在，并且可以进行注入，否则会出现错误
+当然，如果子类中某些属性比较特殊，也可以在继承的基础上单独配置</li>
+<li>Abstract
+如果我们只是希望某一个Bean仅作为一个配置模版供其他Bean继承使用，那么我们可以将其配置为abstract，这样，容器就不会创建这个Bean的对象了：</li>
+</ul></li>
+<li>Bean 的注入方式
+<ul>
+<li>Bean 的Set 方法</li>
+<li>Bean 的构造方法</li>
+</ul></li>
+<li>InitializingBean 接口
+<ul>
+<li>只包括afterPropertiesSet方法，凡是继承该接口的类，在初始化bean的时候都会执行该方法。Spring初始化bean的时候，如果该bean实现了InitializingBean接口，并且同时在配置文件中指定了init-method，系统则是先调用afterPropertieSet()方法，然后再调用init-method中指定的方法。</li>
+</ul></li>
+<li>静态工厂方法与实例工厂方法
+<ul>
+<li>静态工厂方法不需要先定义 factorybean</li>
+</ul></li>
+</ul>
+<h2 id="bean-的-get-方法">Bean 的 get 方法</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object <span class="title function_">getBean</span><span class="params">(String beanName)</span> </span><br><span class="line"><span class="comment">//需要强制转换</span></span><br><span class="line"><span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> (UserService)applicationContext.getBean(<span class="string">&quot;	userService&quot;</span>)</span><br><span class="line"></span><br><span class="line">T <span class="title function_">getBean</span><span class="params">(Class type)</span></span><br><span class="line">T <span class="title function_">getBean</span><span class="params">(String beanName,Class type)</span></span><br></pre></td></tr></table></figure>
+<h2 id="spring-配置非自定义的-bean">Spring 配置非自定义的 Bean</h2>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501a88c538a9b5c04022.png"
+alt="spring配置非自定义的bean.png" />
+<figcaption aria-hidden="true">spring配置非自定义的bean.png</figcaption>
+</figure>
+<h2 id="bean-的实例化基本流程">Bean 的实例化基本流程</h2>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501188c538a9b5c0401b.png"
+alt="bean实例化基本流程1.png" />
+<figcaption aria-hidden="true">bean实例化基本流程1.png</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501288c538a9b5c0401c.png"
+alt="bean实例化基本流程2.png" />
+<figcaption aria-hidden="true">bean实例化基本流程2.png</figcaption>
+</figure>
+<h2 id="bean-工厂的后处理器">Bean 工厂的后处理器</h2>
+<h3 id="流程">流程</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9500388c538a9b5c04009.png"
+alt="bean的后处理器.png" />
+<figcaption aria-hidden="true">bean的后处理器.png</figcaption>
+</figure>
+<h3 id="代码">代码</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//github上 min-spring的实现过程，此时未使用applicationContext </span></span><br><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanFactoryPostProcessor</span> &#123;  </span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">postProcessBeanFactory</span><span class="params">(ConfigurableListableBeanFactory beanFactory)</span> <span class="keyword">throws</span> BeansException;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CustomBeanFactoryPostProcessor</span> <span class="keyword">implements</span> <span class="title class_">BeanFactoryPostProcessor</span> &#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postProcessBeanFactory</span><span class="params">(ConfigurableListableBeanFactory beanFactory)</span> <span class="keyword">throws</span> BeansException &#123;  </span><br><span class="line">       System.out.println(<span class="string">&quot;CustomBeanFactoryPostProcessor#postProcessBeanFactory&quot;</span>);  </span><br><span class="line">       <span class="type">BeanDefinition</span> <span class="variable">personBeanDefiniton</span> <span class="operator">=</span> beanFactory.getBeanDefinition(<span class="string">&quot;person&quot;</span>);  </span><br><span class="line">       <span class="type">PropertyValues</span> <span class="variable">propertyValues</span> <span class="operator">=</span> personBeanDefiniton.getPropertyValues();  </span><br><span class="line">       <span class="comment">//将person的name属性改为ivy  </span></span><br><span class="line">       propertyValues.addPropertyValue(<span class="keyword">new</span> <span class="title class_">PropertyValue</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;ivy&quot;</span>));  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BeanFactoryProcessorAndBeanPostProcessorTest</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testBeanFactoryPostProcessor</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		<span class="type">DefaultListableBeanFactory</span> <span class="variable">beanFactory</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DefaultListableBeanFactory</span>();</span><br><span class="line">		<span class="type">XmlBeanDefinitionReader</span> <span class="variable">beanDefinitionReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">XmlBeanDefinitionReader</span>(beanFactory);</span><br><span class="line">		beanDefinitionReader.loadBeanDefinitions(<span class="string">&quot;classpath:spring.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//在所有BeanDefintion加载完成后，但在bean实例化之前，修改BeanDefinition的属性值</span></span><br><span class="line">		<span class="type">CustomBeanFactoryPostProcessor</span> <span class="variable">beanFactoryPostProcessor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CustomBeanFactoryPostProcessor</span>();</span><br><span class="line">		beanFactoryPostProcessor.postProcessBeanFactory(beanFactory);</span><br><span class="line"></span><br><span class="line">		<span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> (Person) beanFactory.getBean(<span class="string">&quot;person&quot;</span>);</span><br><span class="line">		System.out.println(person);</span><br><span class="line">		<span class="comment">//name属性在CustomBeanFactoryPostProcessor中被修改为ivy</span></span><br><span class="line">		assertThat(person.getName()).isEqualTo(<span class="string">&quot;ivy&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>BeanDefinitionRegistryPostProcessor 继承自上面的
+BeanFactoryPostProcessor，说明 BeanDefinitionRegistryPostProcessor对
+BeanFactoryPostProcessor提供的方法进行了增强扩展。一句话总结其功能作用就是注册beanDefinition的.</li>
+<li>ConfigurationClassPostProcessor 就是实现
+BeanDefinitionRegistryPostProcessor
+来完成配置类及其相关注解解析得到beanDefinition注册到Spring上下文中的。
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用applicationContext </span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Boo</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyBeanDefinitionRegistryPostProcessor</span> <span class="keyword">implements</span> <span class="title class_">BeanDefinitionRegistryPostProcessor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postProcessBeanDefinitionRegistry</span><span class="params">(BeanDefinitionRegistry registry)</span> <span class="keyword">throws</span> BeansException &#123;</span><br><span class="line">        <span class="comment">// 注入boo</span></span><br><span class="line">        <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RootBeanDefinition</span>();</span><br><span class="line">        beanDefinition.setBeanClassName(<span class="string">&quot;com.shepherd.common.bean.Boo&quot;</span>);</span><br><span class="line">        registry.registerBeanDefinition(<span class="string">&quot;boo&quot;</span>, beanDefinition);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postProcessBeanFactory</span><span class="params">(ConfigurableListableBeanFactory beanFactory)</span> <span class="keyword">throws</span> BeansException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;BeanFactoryPostProcessor execute...&quot;</span>);</span><br><span class="line">        <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> beanFactory.getBeanDefinition(<span class="string">&quot;boo&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (Objects.nonNull(beanDefinition)) &#123;</span><br><span class="line">            beanDefinition.setDescription(<span class="string">&quot;hello，world&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">AnnotationConfigApplicationContext</span> <span class="variable">applicationContext</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(MyConfig.class);</span><br><span class="line">        <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> applicationContext.getBeanDefinition(<span class="string">&quot;boo&quot;</span>);</span><br><span class="line">        System.out.println(beanDefinition.getDescription());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>上述实现需要配置 xml 文件</li>
+</ul>
+<h3 id="自定义注解">自定义注解</h3>
+<h4 id="元注解">元注解</h4>
+<ul>
+<li>Target、<span class="citation"
+data-cites="Retention">@Retention</span>、<span class="citation"
+data-cites="Inherited">@Inherited</span>、<span class="citation"
+data-cites="Documented">@Documented</span>
+元注解的作用就是负责注解其他注解</li>
+<li><span class="citation" data-cites="Target">@Target</span>:
+描述注解的使用范围
+<ul>
+<li>ElementType.TYPE 应用于类、接口（包括注解类型）、枚举</li>
+<li>ElementType.FIELD 应用于属性（包括枚举中的常量）</li>
+<li>ElementType.METHOD 应用于方法</li>
+<li>ElementType.PARAMETER 应用于方法的形参</li>
+<li>ElementType.CONSTRUCTOR 应用于构造函数</li>
+<li>ElementType.LOCAL_VARIABLE 应用于局部变量</li>
+<li>ElementType.ANNOTATION_TYPE 应用于注解类型</li>
+<li>ElementType.PACKAGE 应用于包</li>
+</ul></li>
+<li><span class="citation"
+data-cites="Retention">@Retention</span>：表明该注解的生命周期
+<ul>
+<li>RetentionPolicy.SOURCE 编译时被丢弃，不包含在类文件中</li>
+<li>RetentionPolicy.CLASS JVM加载时被丢弃，包含在类文件中，默认值</li>
+<li>RetentionPolicy.RUNTIME 由JVM
+加载，包含在类文件中，在运行时可以被获取到</li>
+</ul></li>
+<li><span class="citation"
+data-cites="Inherited">@Inherited</span>：是一个标记注解，<span
+class="citation"
+data-cites="Inherited阐述了某个被标注的类型是被继承的">@Inherited阐述了某个被标注的类型是被继承的</span>。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。</li>
+<li><span class="citation"
+data-cites="Documented">@Documented</span>：表明该注解标记的元素可以被Javadoc
+或类似的工具文档化</li>
+</ul>
+<h4 id="流程-1">流程</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9502188c538a9b5c0402a.png"
+alt="自定义注解.png" />
+<figcaption aria-hidden="true">自定义注解.png</figcaption>
+</figure>
+<h4 id="代码-1">代码</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注解的作用 类似代替原有的</span></span><br><span class="line">&lt;<span class="type">bean</span> <span class="variable">id</span> <span class="operator">=</span> <span class="string">&quot;UserDao&quot;</span> </span><br><span class="line">name =<span class="string">&quot;aaa,bbb&quot;</span></span><br><span class="line">class = <span class="string">&quot;com.itheima.dao.impl.UserDaoImpl&quot;</span> &gt;&lt;/bean&gt;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Retention(Retention.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Mycomponent&#123;</span><br><span class="line">  string value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Mycomponent(&quot;otherbena&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserDaoImpl</span> <span class="keyword">implements</span> <span class="title class_">UserDao</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyComponentBeanFactoryPostProcessor</span> <span class="keyword">implements</span> <span class="title class_">BeanDefinitionRegistryPostProcessor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postProcessBeanDefinitionRegistry</span><span class="params">(BeanDefinitionRegistry registry)</span> <span class="keyword">throws</span> BeansException &#123;</span><br><span class="line">       <span class="comment">//通过扫描工具扫描指定包以及子包下的所有类，收集使用@Mycomponent注解的类</span></span><br><span class="line">       My&lt;string,class&gt; myComponentAnnotationMap  = BaseClassScanUtils.scanMyComponentAnnotation(<span class="string">&quot;com.test&quot;</span>)</span><br><span class="line">       myComponentAnnotationMap.foreach((beanName,clazz))-&gt;(<span class="type">string</span> <span class="variable">beanClassName</span> <span class="operator">=</span> clazz.getname);</span><br><span class="line">    <span class="type">BeanDefinition</span> <span class="variable">beanDefinition</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RootBeanDefinition</span>();</span><br><span class="line">    beanDefinition.setBeanClassName(<span class="string">&quot;beanClassName&quot;</span>);</span><br><span class="line">    registry.registerBeanDefinition(beanName, beanDefinition);  </span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//xml中配置MyComponentBeanFactoryPostProcessor让他生效</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postProcessBeanFactory</span><span class="params">(ConfigurableListableBeanFactory )</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="bean-后置处理器">Bean 后置处理器</h2>
+<h3 id="流程-2">流程</h3>
+<ul>
+<li>BeanPostProcessor</li>
+<li>Bean被实例化后，到最终缓存到名为singletonObjects单例池之前，中间会经过Bean的初始化过程，例如：属性的填充、初始方法init的执行等，BeanPostProcessor
+就是这一阶段的对外扩展点，我们称之为Bean后置处理器。跟上面的Bean工厂后处理器相似，它也是一个接口，实现了该接口并被容器管理的BeanPostProcessor，会在流程节点上被Spring自动调用。</li>
+</ul>
+<h3 id="代码-2">代码</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xml中配置MyBeanPostProcessor 不使用注解的流程</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyBeanPostProcessor</span> <span class="keyword">implements</span> <span class="title class_">BeanPostProcessor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;beanPostProcessor的before()执行了....&quot;</span> + beanName);</span><br><span class="line">        <span class="keyword">return</span> bean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;beanPostProcessor的after()执行了....&quot;</span>+ beanName);</span><br><span class="line">        <span class="keyword">return</span> bean;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Boo</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Boo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;boo实例化构造方法执行了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="comment">// 该注解表示实例化之后执行该初始化方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;boo执行初始化init()方法了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">AnnotationConfigApplicationContext</span> <span class="variable">applicationContext</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(MyConfig.class);</span><br><span class="line">      </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//需要配置xml文件，结果如下</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">boo实例化构造方法执行了... </span></span><br><span class="line"><span class="comment">beanPostProcessor的before()执行了....</span></span><br><span class="line"><span class="comment">boo boo执行初始化init()方法了... </span></span><br><span class="line"><span class="comment">beanPostProcessor的after()执行了....boo</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明BeanPostProcessor方法的执行时间点和顺序，BeanPostProcessor是在bean实例化之后，对bean的初始化init()方法前后进行回调扩展的，这时候你可能会想如果要对bean的实例化前后进行扩展怎么办？Spring肯定也想到这一点，提供了继承自
+BeanPostProcessor 的扩展类后置处理器</li>
+</ul>
+<h3 id="扩展">扩展</h3>
+<ul>
+<li><p>InstantiationAwareBeanPostProcessor该接口继承了BeanPostProcess接口</p></li>
+<li><p>BeanPostProcess接口只在bean的初始化阶段进行扩展
+InstantiationAwareBeanPostProcessor接口在此基础上增加了3个方法，把可扩展的范围增加了实例化阶段和属性注入阶段</p></li>
+<li><p>该类主要的扩展点有以下5个方法，主要在bean生命周期的两大阶段：<strong>实例化阶段</strong> 和<strong>初始化阶段</strong> </p></li>
+<li><p>postProcessBeforeInstantiation：<strong>实例化</strong>bean之前，相当于new这个bean之前</p></li>
+<li><p>postProcessAfterInstantiation：<strong>实例化</strong>bean之后，相当于new这个bean之后</p></li>
+<li><p>postProcessPropertyValues：<strong>bean</strong>已经实例化完成，在属性注入时阶段触发，<span
+class="citation" data-cites="Autowired">@Autowired</span>,<span
+class="citation"
+data-cites="Resource等注解原理基于此方法实现">@Resource等注解原理基于此方法实现</span></p></li>
+<li><p>postProcessBeforeInitialization：初始化bean之前，相当于把bean注入spring上下文之前</p></li>
+<li><p>postProcessAfterInitialization：初始化bean之后，相当于把bean注入spring上下文之后</p></li>
+<li><p>SmartInstantiationAwareBeanPostProcessor该扩展接口集成自上面InstantiationAwareBeanPostProcessor，有3个触发点方法：</p></li>
+<li><p>predictBeanType：该触发点发生在postProcessBeforeInstantiation之前这个方法用于预测Bean的类型，返回第一个预测成功的Class类型，如果不能预测返回null；当你调用BeanFactory.getType(name)时当通过bean的名字无法得到bean类型信息时就调用该回调方法来决定类型信息。(不太常用)</p></li>
+<li><p>determineCandidateConstructors：该触发点发生在postProcessBeforeInstantiation之后，用于确定该bean的构造函数之用，返回的是该bean的所有构造函数列表。用户可以扩展这个点，来自定义选择相应的构造器来实例化这个bean。</p></li>
+<li><p>getEarlyBeanReference：该触发点发生在postProcessAfterInstantiation之后，当有循环依赖的场景，当bean实例化好之后，为了防止有循环依赖，会提前暴露回调方法，用于bean实例化的后置处理。这个方法就是在提前暴露的回调方法中触发。</p></li>
+</ul>
+<h2 id="bean-的生命周期">Bean 的生命周期</h2>
+<h3 id="完整生命周期">完整生命周期</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9500588c538a9b5c0400e.png"
+alt="bean的生命周期2.png" />
+<figcaption aria-hidden="true">bean的生命周期2.png</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9500488c538a9b5c0400b.png"
+alt="bean的生命周期1.png" />
+<figcaption aria-hidden="true">bean的生命周期1.png</figcaption>
+</figure>
+<h3 id="初始化阶段">初始化阶段</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9500488c538a9b5c0400a.png"
+alt="bean的生命周期初始化阶段.png" />
+<figcaption aria-hidden="true">bean的生命周期初始化阶段.png</figcaption>
+</figure>
+<h3 id="属性填充">属性填充</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501188c538a9b5c0401a.png"
+alt="bean生命周期属性填充.png" />
+<figcaption aria-hidden="true">bean生命周期属性填充.png</figcaption>
+</figure>
+<h3 id="循环依赖">循环依赖</h3>
+<h4 id="三级缓存">三级缓存</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9500688c538a9b5c0400f.png"
+alt="bean生命周期三级缓存.png" />
+<figcaption aria-hidden="true">bean生命周期三级缓存.png</figcaption>
+</figure>
+<h4 id="实例流程">实例流程</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501188c538a9b5c04019.png"
+alt="bean生命周期三级缓存实例.png" />
+<figcaption aria-hidden="true">bean生命周期三级缓存实例.png</figcaption>
+</figure>
+<h3 id="aware">Aware</h3>
+<h4 id="概述">概述</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9500588c538a9b5c0400c.png"
+alt="bean的生命周期Aware接口.png" />
+<figcaption aria-hidden="true">bean的生命周期Aware接口.png</figcaption>
+</figure>
+<h4 id="解释">解释</h4>
+<ul>
+<li><p>Aware 接口是一个具有标识作用的超级接口，指示 bean 是具有被 Spring
+容器通知的能力，通知的方式是采用回调的方式。Aware
+接口是一个空接口，具体的实现由各个子接口决定，且该接口通常只包含一个单个参数并且返回值为void的方法**。可以理解就是
+set 方法。该方法的命名方式为 set + 去掉接口名中的 Aware 后缀，即
+XxxAware 接口，则方法定义为 setXxx()，例如
+BeanNameAware（setBeanName），ApplicationContextAware（setApplicationContext）。注意，仅实现Aware接口，不会提供任何默认功能，需要明确的指定实现哪个子接口。</p></li>
+<li><p>通俗的来说，Aware
+翻译过来的意思是有感知的,察觉的，如果类上实现了该接口，表明对什么有感知，比如
+BeanNameAware, 表示知道了自己的Bean Name。</p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qusikao/article/details/136631127#:~:text=%E6%9C%AC%E6%96%87%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E4%BA%86S,%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E7%81%B5%E6%B4%BB%E6%80%A7%E3%80%82">Aware接口应用场景及实现原理！</a></p></li>
+<li><p>可以看看</p></li>
+</ul>
+<h2 id="注解配置">注解配置</h2>
+<h3 id="基本配置">基本配置</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9502088c538a9b5c04028.png"
+alt="bean注解基本配置.png" />
+<figcaption aria-hidden="true">bean注解基本配置.png</figcaption>
+</figure>
+<h3 id="基本配置代码">基本配置代码</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用注解时xml文件中还必须有配置，让spring扫描注解来获得bean对象</span></span><br><span class="line">&lt;context:component-scan base-<span class="keyword">package</span> =<span class="string">&quot;com.test&quot;</span>/&gt;</span><br><span class="line"><span class="meta">@Scope(&quot;singleton&quot;)</span></span><br><span class="line"><span class="meta">@Component(&quot;userService&quot;)</span></span><br><span class="line"><span class="meta">@Lazy(true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">UserService</span>&#123;</span><br><span class="line"><span class="meta">@PostConstruct</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">@PreDestory</span></span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="基本注解衍生注解">基本注解衍生注解</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9502088c538a9b5c04028.png"
+alt="基本注解衍生注解.png" />
+<figcaption aria-hidden="true">基本注解衍生注解.png</figcaption>
+</figure>
+<h3 id="依赖注入注解">依赖注入注解</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501288c538a9b5c0401d.png"
+alt="bean依赖注入注解.png" />
+<figcaption aria-hidden="true">bean依赖注入注解.png</figcaption>
+</figure>
+<ul>
+<li>Autowired 依据类型进行注入，如果同一类型的 bean
+有多个，会根据名字二次匹配</li>
+</ul>
+<h3 id="非自定义-bean-注解">非自定义 bean 注解</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501c88c538a9b5c04027.png"
+alt="非自定义bean注解配置.png" />
+<figcaption aria-hidden="true">非自定义bean注解配置.png</figcaption>
+</figure>
+<h3 id="bean-配置类">Bean 配置类</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt; &lt;beans xmlns=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span> xmlns:xsi=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> xsi:schemaLocation=<span class="string">&quot;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt; &lt;/beans&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.test&quot;)</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;...&quot;)</span> </span><br><span class="line"><span class="meta">@Import(&quot;OtherBean.classs&quot;)</span><span class="comment">//导入外部配置类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainConfiguration</span> &#123;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="其他配置类">其他配置类</h3>
+<ul>
+<li><span class="citation" data-cites="Profile">@Profile</span>
+切换环境</li>
+<li><span class="citation" data-cites="Primary">@Primary</span> 标注
+bean 的优先级会更高，在通过类型获取 bean 或者通过@Autowired
+根据类型进行注入时优先级会更高</li>
+</ul>
+<h3 id="xml-与注解方式">Xml 与注解方式</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9501b88c538a9b5c04024.png"
+alt="Xml与注解.png" />
+<figcaption aria-hidden="true">Xml与注解.png</figcaption>
+</figure>
+<h1 id="aop">AOP</h1>
+<h3 id="aop-概念">AOP 概念</h3>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d94ffa88c538a9b5c04006.png"
+alt="AOP概念.png" />
+<figcaption aria-hidden="true">AOP概念.png</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d94ffa88c538a9b5c04007.png"
+alt="AOP概念解释.png" />
+<figcaption aria-hidden="true">AOP概念解释.png</figcaption>
+</figure>
+<h3 id="xml-配置-aop">Xml 配置 AOP</h3>
+<h4 id="流程-3">流程</h4>
+<ul>
+<li>导入 AOP 相关坐标</li>
+<li>准备目标类，增强类，并配置给 Spring 管理</li>
+<li>配置切点表达式（哪些方法被增强）</li>
+<li>配置织入（切点被哪些通知方法增强，是前置增强还是后置增强）</li>
+</ul>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d94ffa88c538a9b5c04003.png"
+alt="Aop五类通知.png" />
+<figcaption aria-hidden="true">Aop五类通知.png</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d94ffa88c538a9b5c04005.png"
+alt="Aop参数传递.png" />
+<figcaption aria-hidden="true">Aop参数传递.png</figcaption>
+</figure>
+<h4 id="代码-3">代码</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt; &lt;beans xmlns=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span> xmlns:xsi=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> xmlns:aop=<span class="string">&quot;http://www.springframework.org/schema/aop&quot;</span></span><br><span class="line"><span class="comment">//配置AOP命名空间 </span></span><br><span class="line">xsi:schemaLocation=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd&quot;</span>&gt; &lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">example</span> &#123; </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line"> System.out.println(<span class="string">&quot;测试&quot;</span>); </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;bean class=<span class="string">&quot;com.example&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">exampleAOP</span> &#123; </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">aftertest</span><span class="params">()</span> &#123; </span><br><span class="line">System.out.println(<span class="string">&quot;测试之后&quot;</span>); </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">&lt;aop:pointcut id=<span class="string">&quot;test&quot;</span> expression=<span class="string">&quot;&quot;</span>execution(* org.example.example.test())<span class="string">&quot;/&gt;</span></span><br><span class="line"><span class="string">//相当 expression=&quot;</span><span class="string">&quot;execution(public void com.example.test())</span></span><br><span class="line"><span class="string">&lt;aop:aspect ref=&quot;</span>exampleAOP<span class="string">&quot;&gt; </span></span><br><span class="line"><span class="string">&lt;aop:after method=&quot;</span>aftertest<span class="string">&quot; pointcut-ref=&quot;</span>test<span class="string">&quot;/&gt; </span></span><br><span class="line"><span class="string">&lt;/aop:aspect&gt;</span></span><br><span class="line"><span class="string">&lt;/aop:config&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置解析-1">配置解析</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/source/imge/Spring/xml配置AOP解析1.png"
+alt="xml配置AOP解析1.png" />
+<figcaption aria-hidden="true">xml配置AOP解析1.png</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/source/imge/Spring/Aop切点表达式例子.png"
+alt="Aop切点表达式例子.png" />
+<figcaption aria-hidden="true">Aop切点表达式例子.png</figcaption>
+</figure>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/source/imge/Spring/xml配置AOP解析2.png"
+alt="Xml配置AOP解析2.png" />
+<figcaption aria-hidden="true">Xml配置AOP解析2.png</figcaption>
+</figure>
+<h3 id="aop-两种代理模式">AOP 两种代理模式</h3>
+<ul>
+<li>JDK
+<ul>
+<li>目标类有接口，是基于接口类生成实现类的代理对象</li>
+<li>有接口，默认实现</li>
+</ul></li>
+<li>Cglib
+<ul>
+<li>目标类无接口且不能用final
+修饰，是基于被代理对象动态生成子对象为代理对象</li>
+<li>无接口，默认实现，但可强行使用 <img
+src="https://pic1.imgdb.cn/item/67d94ffa88c538a9b5c04002.png"
+alt="AOP两种代理模式.png" /></li>
+</ul></li>
+</ul>
+<h3 id="注解配置-aop">注解配置 AOP</h3>
+<h4 id="流程-4">流程</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9502188c538a9b5c0402b.png"
+alt="注解配置AOP.png" />
+<figcaption aria-hidden="true">注解配置AOP.png</figcaption>
+</figure>
+<h4 id="解析">解析</h4>
+<figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d9502188c538a9b5c04029.png"
+alt="注解开发AOP解析.png" />
+<figcaption aria-hidden="true">注解开发AOP解析.png</figcaption>
+</figure>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2025/02/24/Skyout%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Skyout环境配置指南</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67d94ddb88c538a9b5c03fc3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">世事悠悠混未了,年光冉冉今如许</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">织</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Alicecooo" target="_blank" title="Github"></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ioc"><span class="toc-number">1.</span> <span class="toc-text">IOC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml-%E9%85%8D%E7%BD%AE-bean"><span class="toc-number">1.1.</span> <span class="toc-text">Xml 配置 Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%A0%B7%E4%BE%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">配置样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90"><span class="toc-number">1.1.3.</span> <span class="toc-text">配置解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean-%E7%9A%84-get-%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">Bean 的 get 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#spring-%E9%85%8D%E7%BD%AE%E9%9D%9E%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-bean"><span class="toc-number">1.3.</span> <span class="toc-text">Spring 配置非自定义的 Bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean-%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-number">1.4.</span> <span class="toc-text">Bean 的实例化基本流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean-%E5%B7%A5%E5%8E%82%E7%9A%84%E5%90%8E%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.5.</span> <span class="toc-text">Bean 工厂的后处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.5.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.5.3.</span> <span class="toc-text">自定义注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">元注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B-1"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean-%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.6.</span> <span class="toc-text">Bean 后置处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B-2"><span class="toc-number">1.6.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.6.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-number">1.6.3.</span> <span class="toc-text">扩展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.7.</span> <span class="toc-text">Bean 的生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.7.1.</span> <span class="toc-text">完整生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="toc-number">1.7.2.</span> <span class="toc-text">初始化阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%A1%AB%E5%85%85"><span class="toc-number">1.7.3.</span> <span class="toc-text">属性填充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96"><span class="toc-number">1.7.4.</span> <span class="toc-text">循环依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-number">1.7.4.1.</span> <span class="toc-text">三级缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%B5%81%E7%A8%8B"><span class="toc-number">1.7.4.2.</span> <span class="toc-text">实例流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#aware"><span class="toc-number">1.7.5.</span> <span class="toc-text">Aware</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.7.5.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">1.7.5.2.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE"><span class="toc-number">1.8.</span> <span class="toc-text">注解配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.8.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81"><span class="toc-number">1.8.2.</span> <span class="toc-text">基本配置代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B3%A8%E8%A7%A3%E8%A1%8D%E7%94%9F%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.8.3.</span> <span class="toc-text">基本注解衍生注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.8.4.</span> <span class="toc-text">依赖注入注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E8%87%AA%E5%AE%9A%E4%B9%89-bean-%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.8.5.</span> <span class="toc-text">非自定义 bean 注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bean-%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-number">1.8.6.</span> <span class="toc-text">Bean 配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-number">1.8.7.</span> <span class="toc-text">其他配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml-%E4%B8%8E%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F"><span class="toc-number">1.8.8.</span> <span class="toc-text">Xml 与注解方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#aop"><span class="toc-number">2.</span> <span class="toc-text">AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#aop-%E6%A6%82%E5%BF%B5"><span class="toc-number">2.0.1.</span> <span class="toc-text">AOP 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xml-%E9%85%8D%E7%BD%AE-aop"><span class="toc-number">2.0.2.</span> <span class="toc-text">Xml 配置 AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B-3"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="toc-number">2.0.2.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90-1"><span class="toc-number">2.0.2.3.</span> <span class="toc-text">配置解析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#aop-%E4%B8%A4%E7%A7%8D%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.0.3.</span> <span class="toc-text">AOP 两种代理模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE-aop"><span class="toc-number">2.0.4.</span> <span class="toc-text">注解配置 AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B-4"><span class="toc-number">2.0.4.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-number">2.0.4.2.</span> <span class="toc-text">解析</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/17/Spring/" title="Spring">Spring</a><time datetime="2025-03-17T15:34:25.000Z" title="发表于 2025-03-17 23:34:25">2025-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/24/Skyout%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="Skyout环境配置指南">Skyout环境配置指南</a><time datetime="2025-02-24T09:08:51.000Z" title="发表于 2025-02-24 17:08:51">2025-02-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/18/page/" title="写在前面(重要)">写在前面(重要)</a><time datetime="2025-02-18T09:48:10.000Z" title="发表于 2025-02-18 17:48:10">2025-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/08/C++(%E4%B8%89%EF%BC%89/" title="C++ part third">C++ part third</a><time datetime="2025-02-08T14:38:00.000Z" title="发表于 2025-02-08 22:38:00">2025-02-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/08/C++(%E4%BA%8C)/" title="C++ part two">C++ part two</a><time datetime="2025-02-08T14:37:42.000Z" title="发表于 2025-02-08 22:37:42">2025-02-08</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 织</div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/CS/" style="font-size: 0.88rem;">CS<sup>6</sup></a><a href="/tags/JAVA/" style="font-size: 0.88rem;">JAVA<sup>1</sup></a><a href="/tags/Summary/" style="font-size: 0.88rem;">Summary<sup>1</sup></a><a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 0.88rem;">后端<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 织 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
